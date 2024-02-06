@@ -6,9 +6,10 @@
 int isPrime(int n)
 {
     int check = 0;  // Initialize a counter variable to check for divisors
-    for(int i = 2; i < n/2; i++)  // Loop from 2 to n/2
+    if (n < 2) return 0; // 0 and 1 are not prime numbers
+    for(int i = 2; i <= n/2; i++)  // Loop from 2 to n/2
     {
-        if(n%2==0)  // If n is divisible by 2
+        if(n%i==0)  // If n is divisible by i
         {
             check++;  // Increment the counter
             break;   // Exit the loop
